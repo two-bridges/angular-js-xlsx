@@ -1,39 +1,39 @@
 {
-  "name": "angular-js-xlsx",
-  "version": "0.0.3",
-  "description": "An angular directive to read XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet)",
-  "main": "angular-js-xlsx.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brexis/angular-js-xlsx.git"
-  },
-  "keywords": [
-    "excel",
-    "xls",
-    "xml",
-    "xlsx",
-    "xlsm",
-    "xlsb",
-    "ods",
-    "js-xls",
-    "js-xlsx",
-    "angular",
-    "directive"
-  ],
-  "author": "Boris KOUMONDJI <brexis2009@yahoo.fr>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brexis/angular-js-xlsx/issues"
-  },
-  "dependencies": {
-    "@types/angular": "^1.5.23",
-    "@types/jquery": "^3.3.1",
-    "angular": "^1.4.14",
-    "xlsx": "~0.8.0"
-  },
-  "homepage": "https://github.com/brexis/angular-js-xlsx#readme",
-  "devDependencies": {}
+    "name": "angular-js-xlsx",
+    "version": "0.0.3",
+    "description": "An angular directive to read XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet)",
+    "main": "angular-js-xlsx.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brexis/angular-js-xlsx.git"
+    },
+    "keywords": [
+        "excel",
+        "xls",
+        "xml",
+        "xlsx",
+        "xlsm",
+        "xlsb",
+        "ods",
+        "js-xls",
+        "js-xlsx",
+        "angular",
+        "directive"
+    ],
+    "author": "Boris KOUMONDJI <brexis2009@yahoo.fr>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/brexis/angular-js-xlsx/issues"
+    },
+    "dependencies": {
+        "@types/angular": "^1.5.23",
+        "@types/jquery": "^3.3.1",
+        "angular": "^1.4.14",
+        "xlsx": "~0.8.0"
+    },
+    "homepage": "https://github.com/brexis/angular-js-xlsx#readme",
+    "devDependencies": {}
 }
