@@ -20,7 +20,9 @@ angular.module('angular-js-xlsx', [])
                         var data = this.result;
                         /* if binary string, read with type 'binary' */
                         try {
-                            var workbook = XLSX.read(data, { type: 'binary' });
+                            var options = scope.xlsxReadOptions ? scope.xlsxReadOptions : {};
+                            options.type = 'binary';
+                            var workbook = XLSX.read(data, options);
                             if (attrs.onread) {
                                 if (scope.onread) {
                                     scope.onread({ workbook: workbook });
