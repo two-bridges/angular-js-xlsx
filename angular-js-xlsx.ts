@@ -11,31 +11,27 @@ angular.module('angular-js-xlsx', [])
             template: '<input type="file" />',
             replace: true,
             scope: {
-                xlsxReadOptions: '='
+                xlsxReadOptions: '=',
+                onread: '&'
             },
             link: function (scope: angular.IScope, element: angular.IRootElementService, attrs: angular.IAttributes) {
-
                 function handleSelect() {
+
                     var files = this.files;
                     for (var i = 0, f = files[i]; i != files.length; ++i) {
                         let reader = new FileReader();
                         reader.result
                         var name = f.name;
                         reader.onload = function (e) {
-                            if (!e) {
-                                var data = (<any>reader).content;
-                            } else {
-                                var data = (<any>e.target).result;
-                            }
+                            let data = this.result;
 
                             /* if binary string, read with type 'binary' */
                             try {
-                                var workbook = XLS.read(data, { type: 'binary' });
+                                var workbook = XLSX.read(data, { type: 'binary' });
 
                                 if (attrs.onread) {
-                                    var handleRead = scope[attrs.onread];
-                                    if (typeof handleRead === "function") {
-                                        handleRead(workbook);
+                                    if (scope.onread) {
+                                        scope.onread({ workbook: workbook });
                                     }
                                 }
 

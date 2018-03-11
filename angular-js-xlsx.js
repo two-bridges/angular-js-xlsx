@@ -6,29 +6,24 @@ angular.module('angular-js-xlsx', [])
         template: '<input type="file" />',
         replace: true,
         scope: {
-            xlsxReadOptions: '='
+            xlsxReadOptions: '=',
+            onread: '&'
         },
         link: function (scope, element, attrs) {
             function handleSelect() {
                 var files = this.files;
-                var _loop_1 = function () {
+                for (var i = 0, f = files[i]; i != files.length; ++i) {
                     var reader = new FileReader();
                     reader.result;
-                    name = f.name;
+                    var name = f.name;
                     reader.onload = function (e) {
-                        if (!e) {
-                            var data = reader.content;
-                        }
-                        else {
-                            var data = e.target.result;
-                        }
+                        var data = this.result;
                         /* if binary string, read with type 'binary' */
                         try {
-                            var workbook = XLS.read(data, { type: 'binary' });
+                            var workbook = XLSX.read(data, { type: 'binary' });
                             if (attrs.onread) {
-                                var handleRead = scope[attrs.onread];
-                                if (typeof handleRead === "function") {
-                                    handleRead(workbook);
+                                if (scope.onread) {
+                                    scope.onread({ workbook: workbook });
                                 }
                             }
                         }
@@ -64,10 +59,6 @@ angular.module('angular-js-xlsx', [])
                         };
                     }
                     reader.readAsBinaryString(f);
-                };
-                var name;
-                for (var i = 0, f = files[i]; i != files.length; ++i) {
-                    _loop_1();
                 }
             }
             element.on('change', handleSelect);
