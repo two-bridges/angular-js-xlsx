@@ -29,11 +29,21 @@
     "url": "https://github.com/brexis/angular-js-xlsx/issues"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@types/angular": "^1.5.23",
     "@types/jquery": "^3.3.1",
+=======
+>>>>>>> 41badec353acc62b0c9651107defab2233cdcac3
     "angular": "^1.4.14",
     "xlsx": "~0.8.0"
   },
   "homepage": "https://github.com/brexis/angular-js-xlsx#readme",
+<<<<<<< HEAD
   "devDependencies": {}
+=======
+  "devDependencies": {
+    "@types/angular": "^1.5.23",
+    "@types/jquery": "^3.3.1"
+  }
+>>>>>>> 41badec353acc62b0c9651107defab2233cdcac3
 }
